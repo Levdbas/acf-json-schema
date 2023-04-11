@@ -1,0 +1,42 @@
+{
+    "title": "JSON schema for ACF WordPress blocks",
+    "allOf": [{ "$ref": "https://schemas.wp.org/trunk/block.json" }],
+    "$extend": {
+        "properties": {
+            "acf": { "type": "object" }
+        }
+    },
+    "properties": {
+        "acf": {
+            "type": "object",
+            "description": "Additional ACF block.json settings. See https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/ for more details.",
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "description": "The display mode for your block. Available settings are 'auto', 'preview' and 'edit'. Defaults to 'preview'. auto: Preview is shown by default but changes to edit form when block is selected. preview: Preview is always shown. The edit form will appear in the sidebar when the block is selected. edit: Edit form is always shown. Note. When in 'preview' or 'edit' modes, an icon will appear in the block toolbar to toggle between modes.",
+                    "default": "preview",
+                    "enum": ["preview", "edit", "auto"]
+                },
+                "renderTemplate": {
+                    "description": " The path to a template file used to render the block HTML. This can either be a relative path to a file based on where your block.json file is located, or an absolute path.",
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "postTypes": {
+                    "description": "(Optional) An array of post types to restrict this block type to.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": ["acf"]
+}
