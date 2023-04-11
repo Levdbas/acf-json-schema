@@ -29,9 +29,9 @@
                     ]
                 },
                 "renderCallback": {
-					"type": "string",
-					"description": "Instead of providing a render_template, a callback function name may be specified to output the block’s HTML."
-				},
+                    "type": "string",
+                    "description": "Instead of providing a render_template, a callback function name may be specified to output the block’s HTML."
+                },
                 "postTypes": {
                     "description": "(Optional) An array of post types to restrict this block type to.",
                     "type": "array",
@@ -40,10 +40,10 @@
                     }
                 },
                 "blockVersion": {
-					"type": "number",
-					"description": "The ACF block version this block should use. Defaults to 2",
-					"default": 2
-				},
+                    "type": "number",
+                    "description": "The ACF block version this block should use. Defaults to 2",
+                    "default": 2
+                }
             }
         }
     },
